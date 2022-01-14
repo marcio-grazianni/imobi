@@ -6,7 +6,6 @@ from django.contrib.messages import constants
 from django.contrib import auth
 
 def cadastro(request):
-    # marcio - 1234
     if request.method == "GET":
         if request.user.is_authenticated:
             return redirect('/')
@@ -39,6 +38,7 @@ def cadastro(request):
 
 
 def logar(request):
+    # marcio - 1234
     if request.method == "GET":
         if request.user.is_authenticated:
             return redirect('/')
@@ -55,3 +55,8 @@ def logar(request):
         else:
             auth.login(request, usuario)
             return redirect('/')
+
+
+def sair(request):
+    auth.logout(request)
+    return redirect('/auth/logar')
