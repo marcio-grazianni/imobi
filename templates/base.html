@@ -13,7 +13,7 @@
 
 <body>
     {% if user.is_authenticated %}
-    <div class="container-fluid bg_navbar">
+    <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg_navbar">
             <a class="navbar-brand" href="{% url 'home' %}">
                 <img width="40" src="{% static 'autenticacao/img/logo.png' %}">
@@ -34,7 +34,7 @@
                 </div>
             </div>
         </nav>
-    </div>
+    </header>
 
     {% endif %}
 
