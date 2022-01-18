@@ -1,3 +1,7 @@
+.nav-link {
+    color: white !important;
+}
+
 .bg_navbar{
     background-color: #30CD9E;
 }
@@ -10,11 +14,10 @@
 }
 
 .card_imovel{
-    background-color: #30CD9E;
-
-    width: 20rem;
-    margin-top: 50px;
-    border-radius: 26px;
+    /* margin-top: 3.125rem; */
+    /* width: 16.5rem; */
+    background-color: #30CD9E !important;
+    border-radius: 1.625rem;
 }
 
 .img_capa_imovel{
