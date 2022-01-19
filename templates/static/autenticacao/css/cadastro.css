@@ -11,13 +11,11 @@
 
 .logo_sidebar {
     text-align: center;
-    margin-top: 50%;
+    margin-top: 20%;
 }
 
 .img_logo_sidebar {
     width: 70px;
- 
-
 }
 
 .logo {
@@ -30,7 +28,7 @@
 
 .corpo_sidebar {
 
-    margin-top: 50px;
+    margin-top: 1rem;
     text-align: center;
     
 
