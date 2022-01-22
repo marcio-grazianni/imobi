@@ -70,13 +70,23 @@ WSGI_APPLICATION = 'imobi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'HOST': '127.0.0.1',
+        'NAME': 'imobi',
+        'PORT': '5436',
+        'USER': 'postgres',
+        'PASSWORD': 'Mpvpr@8@8282@1@RCPNMGPOVP',
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -114,6 +124,8 @@ USE_TZ = True
 DECIMAL_SEPARATOR = ','
 THOUSAND_SEPARATOR = '.'
 USE_THOUSAND_SEPARATOR = True
+
+LOGIN_REDIRECT_URL = '/'
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/

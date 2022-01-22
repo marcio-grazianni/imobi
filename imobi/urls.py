@@ -4,9 +4,9 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    path('', include('autenticacao.urls')),
+    path('plataforma/', include('plataforma.urls')),
     path('admin/', admin.site.urls),
-    path('auth/', include('autenticacao.urls')),
-    path('', include('plataforma.urls')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

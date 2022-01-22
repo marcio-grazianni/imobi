@@ -50,7 +50,9 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="{% url 'home' %}" method="GET">
+                <form action="{% url 'home' %}" method="POST">
+                    {% csrf_token %}
+
                     <div>Preço mínimo</div>
                     <div class="mb-1">
                         <input name="preco_minimo" class="form-control" type="number" placeholder="R$ 0,00">
