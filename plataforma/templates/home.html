@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load l10n %}
 
 {% block 'head' %}
 
-<link rel="stylesheet" href="{% static 'plataforma/css/home.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 {% endblock %}
 
@@ -11,9 +12,7 @@
 
 <div class="container-fluid">
     <br>
-    <button type="button" class="btn_filtrar" data-toggle="modal" data-target="#exampleModal">
-        FILTRAR
-    </button>
+    <button type="button" class="btn fundo_botoes_padrao" data-toggle="modal" data-target="#exampleModal">FILTRAR</button>
 
     <div class="row">
 
@@ -21,12 +20,12 @@
 
         <div class="col-sm-6 col-md-4 d-flex align-self-stretch">
             <div class="card_imovel mt-5">
-                <img class="img_capa_imovel" src="{{imovel.imagens.all.0.img.url}}">
+                <img class="img_capa_imovel" src="{{ imovel.imagens.all.0.img.url }}">
                 <div class="informacoes_imoveis">
                     <a class="a_none" href="{% url 'imovel' imovel.id %}">
-                        <h4 class="valor">R$ {{imovel.valor}}</h4>
+                        <h4 class="valor">R$ {{ imovel.valor|floatformat:2 }}</h4>
                     </a>
-                    <div>{{imovel.rua}}, {{imovel.cidade}}</div>
+                    <div>{{ imovel.rua }}, {{ imovel.cidade }}</div>
                     <img width="7%" src="{% static 'plataforma/img/heart.png' %}">
                 </div>
 
@@ -80,7 +79,7 @@
                     <div class="mb-2 p-0">
                         <input name="tipo" type="checkbox" value="C"><label>&nbspCasa</label>
                     </div>
-                    <input class="btn_filtrar_modal" type="submit" value="FILTRAR">
+                    <button class="btn fundo_botoes_padrao" type="submit">FILTRAR</button>
                 </form>
             </div>
         </div>

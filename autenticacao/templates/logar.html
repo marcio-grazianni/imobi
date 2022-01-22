@@ -3,7 +3,7 @@
 
 
 {% block 'head' %}
-<link rel="stylesheet" href="{% static 'autenticacao/css/cadastro.css' %}">
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
 
 {% endblock %}
 
@@ -30,7 +30,7 @@
                     <p class="cor_branca descricao">As melhores casas</p>
                     <p style="margin-top:-20px" class="cor_branca descricao">Nos melhores preços</p>
                     <br>
-                    <a class="btn_logar" href="{% url 'cadastro' %}">Cadastre-se</a>
+                    <a class="btn btn-outline-light btn_logar" href="{% url 'cadastro' %}">Cadastre-se</a>
                 </div>
 
             </div>
@@ -56,7 +56,7 @@
                     <br>
                     <input name="senha" class="input_cadastrar input_cadastrar_senha" type="password" placeholder="Senha...">
                     <br>
-                    <input class="btn_cadastrar" type="submit" value="Logar">
+                    <input class="btn fundo_botoes_padrao mt-4" type="submit" value="Logar">
                 </form>
             </div>
         </div>
