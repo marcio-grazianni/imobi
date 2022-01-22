@@ -23,6 +23,7 @@
                         <th scope="col">Dia/Hora</th>
                         <th scope="col">Status</th>
                         <th scope="col">Cancelar</th>
+                        <th scope="col">Finalizar</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -49,6 +50,13 @@
                             <a href="{% url 'cancelar_agendamento' visita.id %}" class="btn btn-danger">CANCELAR</a>
                             {% else %}
                             <a href="" class="btn btn-danger disabled">CANCELAR</a>
+                            {% endif %}
+                        </td>
+                        <td>
+                            {% if visita.status == "A" %}
+                            <a href="{% url 'finalizar_agendamento' visita.id %}" class="btn btn-success">FINALIZAR</a>
+                            {% else %}
+                            <a href="" class="btn btn-success disabled">FINALIZAR</a>
                             {% endif %}
                         </td>
                     </tr>

@@ -6,5 +6,6 @@ urlpatterns = [
     path('imovel/<str:id>/', views.imovel, name="imovel"),
     path('agendar_visitas/', views.agendar_visitas, name="agendar_visitas"),
     path('agendamentos/', views.agendamentos, name="agendamentos"),
-    path('cancelar_agendamento/<str:id>/', views.cancelar_agendamento, name="cancelar_agendamento")
+    path('cancelar_agendamento/<str:id>/', views.cancelar_agendamento, name="cancelar_agendamento"),
+    path('finalizar_agendamento/<str:id>/', views.finalizar_agendamento, name="finalizar_agendamento")
 ]

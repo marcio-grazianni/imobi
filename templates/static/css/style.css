@@ -20,6 +20,7 @@ hr {
 
 .nav-link {
     color: white !important;
+    text-shadow: black 0.1em 0.1em 0.2em !important;
 }
 
 /* -------------------------------------------------------------------------- */
@@ -45,7 +46,8 @@ hr {
 .logo {
     font-size: 4.375rem;
     color: white;
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Arial, Helvetica, sans-serif;
+    text-shadow: black 0.1em 0.1em 0.2em
 }
 
 .corpo_sidebar {
@@ -134,9 +136,10 @@ hr {
 }
 
 .font_logo {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: Arial, Helvetica, sans-serif;
     font-size: 1.5625rem;
     display: inline;
+    text-shadow: black 0.1em 0.1em 0.2em
 }
 
 .card_imovel {
@@ -200,4 +203,16 @@ hr {
 .rodape {
     color: white;
     background-color: var(--cor-titulo);
+}
+
+.cor_icones_rodape {
+    color: white;
+}
+
+.sombra {
+    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.sombra_texto {
+    text-shadow: black 0.1em 0.1em 0.2em
 }

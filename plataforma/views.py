@@ -1,7 +1,7 @@
 from django.http.response import HttpResponse
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
-from plataforma.models import Imovei, Cidade, Visitas
+from plataforma.models import Imovel, Cidade, Visitas
 from django.shortcuts import get_object_or_404
 
 
@@ -22,25 +22,25 @@ def home(request):
             tipo = ['A', 'C']
 
         if not cidade:
-            imoveis = Imovei.objects\
+            imoveis = Imovel.objects\
             .filter(valor__gte=preco_minimo)\
             .filter(valor__lte=preco_maximo)\
             .filter(tipo_imovel__in=tipo)
         else:
-            imoveis = Imovei.objects\
+            imoveis = Imovel.objects\
             .filter(valor__gte=preco_minimo)\
             .filter(valor__lte=preco_maximo)\
             .filter(tipo_imovel__in=tipo)\
             .filter(cidade=cidade)
     else:
-        imoveis = Imovei.objects.all()
+        imoveis = Imovel.objects.all()
     
     return render(request, 'home.html', {'imoveis': imoveis, 'cidades': cidades})
 
 
 def imovel(request, id):
-    imovel = get_object_or_404(Imovei, id=id)
-    sugestoes = Imovei.objects.filter(cidade=imovel.cidade).exclude(id=id)[:2]
+    imovel = get_object_or_404(Imovel, id=id)
+    sugestoes = Imovel.objects.filter(cidade=imovel.cidade).exclude(id=id)[:2]
     return render(request, 'imovel.html', {'imovel': imovel, 'sugestoes': sugestoes, 'id': id})
 
 
@@ -69,5 +69,12 @@ def agendamentos(request):
 def cancelar_agendamento(request, id):
     visitas = get_object_or_404(Visitas, id=id)
     visitas.status = "C"
+    visitas.save()
+    return redirect('/agendamentos')
+
+
+def finalizar_agendamento(request, id):
+    visitas = get_object_or_404(Visitas, id=id)
+    visitas.status = "F"
     visitas.save()
     return redirect('/agendamentos')

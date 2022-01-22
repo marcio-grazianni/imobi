@@ -1,9 +1,9 @@
 from django.contrib import admin
-from .models import DiasVisita, Horario, Imovei, Cidade, Imagem, Visitas
+from .models import DiasVisita, Horario, Imovel, Cidade, Imagem, Visitas
 
 
-@admin.register(Imovei)
-class ImoveiAdmin(admin.ModelAdmin):
+@admin.register(Imovel)
+class ImovelAdmin(admin.ModelAdmin):
     list_display = ('rua', 'valor', 'quartos', 'tamanho', 'cidade', 'tipo')
     list_editable = ('valor', 'tamanho', 'cidade', 'tipo')
     list_filter = ('cidade', 'tipo')
