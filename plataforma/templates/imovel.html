@@ -118,7 +118,7 @@
                     <div>Escolha um horário</div>
                     <div class="mb-2">
                         <select name="horario" class="form-control">
-                            {% for horario in imovel.horarios.all %}
+                            {% for horario in horarios_imovel %}
                             <option value="{{ horario }}">{{ horario }}</option>
                             {% endfor %}
                         </select>

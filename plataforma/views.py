@@ -46,9 +46,10 @@ def home(request):
 
 @login_required
 def imovel(request, id):
-    imovel = get_object_or_404(Imovel, id=id)
-    sugestoes = Imovel.objects.filter(cidade=imovel.cidade).exclude(id=id)[:2]
-    return render(request, 'imovel.html', {'imovel': imovel, 'sugestoes': sugestoes, 'id': id})
+    imovel_selecionado = get_object_or_404(Imovel, id=id)
+    sugestoes = Imovel.objects.filter(cidade=imovel_selecionado.cidade).exclude(id=id)[:2]
+    horarios_imovel = imovel_selecionado.horarios.all().order_by('horario')
+    return render(request, 'imovel.html', {'imovel': imovel_selecionado, 'sugestoes': sugestoes, 'horarios_imovel': horarios_imovel, 'id': id})
 
 
 @login_required
