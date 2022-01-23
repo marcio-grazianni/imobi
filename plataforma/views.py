@@ -8,8 +8,8 @@ from django.shortcuts import get_object_or_404
 @login_required
 def home(request):
     if request.method == "GET":
-        cidades = Cidade.objects.all()
-        imoveis = Imovel.objects.all()
+        cidades = Cidade.objects.all().order_by('nome')
+        imoveis = Imovel.objects.all().order_by('valor')
     elif request.method == "POST":
         preco_minimo = request.POST.get('preco_minimo')
         preco_maximo = request.POST.get('preco_maximo')
@@ -29,15 +29,17 @@ def home(request):
                 imoveis = Imovel.objects\
                 .filter(valor__gte=preco_minimo)\
                 .filter(valor__lte=preco_maximo)\
-                .filter(tipo_imovel__in=tipo)
+                .filter(tipo_imovel__in=tipo)\
+                .order_by('valor')
             else:
                 imoveis = Imovel.objects\
                 .filter(valor__gte=preco_minimo)\
                 .filter(valor__lte=preco_maximo)\
                 .filter(tipo_imovel__in=tipo)\
-                .filter(cidade=cidade)
+                .filter(cidade=cidade)\
+                .order_by('valor')
         else:
-            imoveis = Imovel.objects.all()
+            imoveis = Imovel.objects.all().order_by('valor')
 
     return render(request, 'home.html', {'imoveis': imoveis, 'cidades': cidades})
 
@@ -69,7 +71,7 @@ def agendar_visitas(request):
 
 @login_required
 def agendamentos(request):
-    visitas = Visitas.objects.filter(usuario=request.user)
+    visitas = Visitas.objects.filter(usuario=request.user).order_by('-id')
     return render(request, "agendamentos.html", {'visitas': visitas})
 
 
