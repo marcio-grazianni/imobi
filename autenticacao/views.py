@@ -17,7 +17,7 @@ def logar(request):
     # fabiano - 1234
     if request.method == "GET":
         if request.user.is_authenticated:
-            return redirect('/')
+            return redirect('/plataforma')
         return render(request, 'logar.html')
     elif request.method == "POST":
         username = request.POST.get('username')
