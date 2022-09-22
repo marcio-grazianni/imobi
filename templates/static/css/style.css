@@ -11,7 +11,8 @@
     --cor-botao-padrao-hover: #99A3A4;
     --cor-hr: var(--cor-menu);
     --cor-titulo: #4d4b4b;
-    --cor-input-cadastrar: #C4C4C4
+    --cor-input-cadastrar: #C4C4C4;
+    --cor-branca: white;
 }
 
 hr {
@@ -25,13 +26,15 @@ hr {
 
 /* -------------------------------------------------------------------------- */
 
-.sidebar {
-    background-color: var(--cor-menu);
-    height: 100vh;
+.cor_branca {
+    color: var(--cor-branca);
 }
 
-.cor_branca {
-    color: white;
+.sidebar {
+    padding: 0px !important;
+    margin: 0px !important;
+    background-color: var(--cor-menu);
+    height: 100vh;
 }
 
 .logo_sidebar {
@@ -60,29 +63,74 @@ hr {
     font-weight: bold;
     border-bottom: 0.125rem solid var(--cor-titulo);
     display: inline;
+    margin-bottom: 1rem;
 }
 
 .descricao {
     font-size: 1.5rem;
 }
 
+.descricao-topo-20 {
+    margin-top: -20px;
+    font-size: 1.5rem;
+}
+
 .btn_logar {
     font-size: 1.875rem !important;
+    margin-top: 1rem;
+}
+
+.segundo-bloco {
+    padding: 0px;
+    margin: 0px;
+}
+
+.area_titulo {
+    border: black 1px solid;
+}
+
+.coluna-cadastrar {
+    border: black 1px solid;
+    padding: 0px !important;
+    margin: 0px !important;
+}
+
+
+.form_cadastrar {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: black 1px solid;
+    padding: 20px;
+    width: 100%;
 }
 
 .area_cadastrar {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    border: black 1px solid;
+    padding: 20px;
+    /* width: 100%; */
+    /* text-align: center; */
 }
 
 .titulo_area_cadastrar {
     font-size: 2.5rem;
     color: var(--cor-menu);
     margin-top: 15%;
+    margin-bottom: "20px";
     font-weight: bold;
 }
 
 .input_cadastrar {
-    width: 60%;
+    /* width: 60%; */
+    min-width: 0px;
+    max-width: 600px;
     border: none;
     background-color: var(--cor-input-cadastrar);
     padding: 0.5rem;
@@ -97,14 +145,17 @@ hr {
 
 .input_cadastrar_nome {
     background-image: url('/static/autenticacao/img/user.png');
+    margin-bottom: 20px;
 }
 
 .input_cadastrar_email {
     background-image: url('/static/autenticacao/img/email.png');
+    margin-bottom: 20px;
 }
 
 .input_cadastrar_senha {
     background-image: url('/static/autenticacao/img/senha.png');
+    margin-bottom: 20px;
 }
 
 .btn_cadastrar {
@@ -123,7 +174,7 @@ hr {
     background-color: var(--cor-botao-padrao) !important;
     font-weight: bold !important;
     font-size: 1.25rem !important;
-    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .fundo_botoes_padrao:hover {
@@ -132,7 +183,7 @@ hr {
     background-color: var(--cor-botao-padrao-hover) !important;
     font-weight: bold !important;
     font-size: 1.25rem !important;
-    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .font_logo {
@@ -210,7 +261,7 @@ hr {
 }
 
 .sombra {
-    box-shadow: 0 0.5rem 1rem 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 0.5rem 1rem 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .sombra_texto {

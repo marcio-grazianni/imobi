@@ -1,66 +1,56 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 {% load static %}
-
-
 {% block 'head' %}
-<link rel="stylesheet" href="{% static 'css/style.css' %}">
-
-{% endblock %}
-
-
-{% block 'titulo' %}Logar{% endblock %}
-
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+{% endblock 'head' %}
+{% block 'titulo' %}
+    Logar
+{% endblock 'titulo' %}
 {% block 'body' %}
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-md-3 sidebar">
-            <div class="logo_sidebar">
-
-                <img class="img_logo_sidebar rounded-circle" src="{% static 'autenticacao/img/logo.jpg' %}">
-                <h2 class="logo">IMOBI</h2>
-
-            </div>
-
-            <div class="corpo_sidebar">
-                <div>
-                    <h2 class="titulo cor_branca">Logar</h2>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-3 sidebar">
+                <div class="logo_sidebar">
+                    <img class="img_logo_sidebar rounded-circle"
+                         width="70px"
+                         height="81px"
+                         alt="logo"
+                         src="{% static 'autenticacao/img/logo.jpg' %}"/>
+                    <h2 class="logo">IMOBI</h2>
                 </div>
-
-                <div>
-                    <p class="cor_branca descricao">As melhores casas</p>
-                    <p style="margin-top:-20px" class="cor_branca descricao">Nos melhores preços</p>
-                    <br>
+                <div class="corpo_sidebar">
+                    <div>
+                        <h2 class="titulo cor_branca">Logar</h2>
+                    </div>
+                    <div>
+                        <p class="cor_branca descricao">As melhores casas</p>
+                        <p class="cor_branca descricao-topo-20">Nos melhores preços</p>
+                    </div>
                     <a class="btn btn-outline-light btn_logar" href="{% url 'cadastro' %}">Cadastre-se</a>
                 </div>
-
             </div>
-        </div>
-
-        <div class="col-md-9">
-            <div class="area_cadastrar">
-                <h2 class="titulo_area_cadastrar">Logar</h2>
-                {% if messages %}
-                    {% for message in messages %}
-                        <div class="alert {{message.tags}}">
-                            {{message}}
-                        </div>
-                    {% endfor %}
-                {% endif %}
-                <br>
-                <br>
-                <form method="POST" action="{% url 'logar' %}">
-                    {% csrf_token %}
-
-                    <input name="username" class="input_cadastrar input_cadastrar_nome" type="text" placeholder="Username...">
-                    <br>
-                    <br>
-                    <input name="senha" class="input_cadastrar input_cadastrar_senha" type="password" placeholder="Senha...">
-                    <br>
-                    <input class="btn fundo_botoes_padrao mt-4" type="submit" value="Logar">
-                </form>
+            <div class="col-md-9 coluna-cadastrar">
+                <div class="area_cadastrar">
+                    <div class="area_titulo">
+                        <h2 class="titulo_area_cadastrar">Logar</h2>
+                    </div>
+                    {% if messages %}
+                        {% for message in messages %}<div class="alert {{ message.tags }}">{{ message }}</div>{% endfor %}
+                    {% endif %}
+                    <form class="form_cadastrar" method="post" action="{% url 'logar' %}">
+                        {% csrf_token %}
+                        <input name="username"
+                               class="input_cadastrar input_cadastrar_nome"
+                               type="text"
+                               placeholder="Username..."/>
+                        <input name="senha"
+                               class="input_cadastrar input_cadastrar_senha"
+                               type="password"
+                               placeholder="Senha..."/>
+                        <input class="btn fundo_botoes_padrao mt-4" type="submit" value="Logar" />
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-
-{% endblock %}
+{% endblock 'body' %}
