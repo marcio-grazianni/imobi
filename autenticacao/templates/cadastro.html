@@ -35,27 +35,19 @@
 
         <div class="col-md-9">
             <div class="area_cadastrar">
+                <div class="area_titulo">
+                    <h2 class="titulo_area_cadastrar">Cadastre-se</h2>
+                </div>
+                {% if messages %}
+                    {% for message in messages %}<div class="alert {{ message.tags }}">{{ message }}</div>{% endfor %}
+                {% endif %}
 
-                <form action="{% url 'cadastro' %}" method="POST">
+                <form class="form_cadastrar" action="{% url 'cadastro' %}" method="POST">
                     {% csrf_token %}
 
-                    <h2 class="titulo_area_cadastrar">Cadastre-se</h2>
-                    {% if messages %}
-                        {% for message in messages %}
-                            <div class="alert {{message.tags}}">
-                                {{message}}
-                            </div>
-                        {% endfor %}
-                    {% endif %}
-                    <br>
                     <input name="username" class="input_cadastrar input_cadastrar_nome" type="text" placeholder="Username...">
-                    <br>
-                    <br>
                     <input name="email" class="input_cadastrar input_cadastrar_email" type="text" placeholder="Email...">
-                    <br>
-                    <br>
                     <input name="senha" class="input_cadastrar input_cadastrar_senha" type="password" placeholder="Senha...">
-                    <br>
                     <input class="btn fundo_botoes_padrao mt-4" type="submit" value="Cadastrar">
                 </form>
             </div>
