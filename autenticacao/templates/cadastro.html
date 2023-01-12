@@ -26,18 +26,15 @@
                 <div>
                     <p class="cor_branca descricao">As melhores casas</p>
                     <p style="margin-top:-20px" class="cor_branca descricao">Nos melhores preços</p>
-                    <br>
                     <a class="btn btn-outline-light btn_logar" href="{% url 'logar' %}">LOGAR</a>
                 </div>
 
             </div>
         </div>
 
-        <div class="col-md-9">
+        <div class="col-md-9 coluna-cadastrar">
             <div class="area_cadastrar">
-                <div class="area_titulo">
-                    <h2 class="titulo_area_cadastrar">Cadastre-se</h2>
-                </div>
+                <h2 class="titulo_area_cadastrar">Cadastre-se</h2>
                 {% if messages %}
                     {% for message in messages %}<div class="alert {{ message.tags }}">{{ message }}</div>{% endfor %}
                 {% endif %}
