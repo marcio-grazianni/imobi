@@ -85,12 +85,7 @@ hr {
     margin: 0px;
 }
 
-.area_titulo {
-    border: black 1px solid;
-}
-
 .coluna-cadastrar {
-    border: black 1px solid;
     padding: 0px !important;
     margin: 0px !important;
 }
@@ -103,6 +98,7 @@ hr {
     justify-content: center;
     align-items: center;
     border: black 1px solid;
+    border-radius: 5px;
     padding: 20px;
     width: 100%;
 }
@@ -113,10 +109,7 @@ hr {
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    border: black 1px solid;
     padding: 20px;
-    /* width: 100%; */
-    /* text-align: center; */
 }
 
 .titulo_area_cadastrar {
@@ -128,7 +121,6 @@ hr {
 }
 
 .input_cadastrar {
-    /* width: 60%; */
     min-width: 0px;
     max-width: 600px;
     border: none;

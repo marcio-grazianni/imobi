@@ -2,8 +2,14 @@
 *.pyc
 *.swp
 *~
+*.ps1
 __pycache__
 db.sqlite3
+/static
+.DS_Store
+/.idea
+/media
+/uploads
+/templates/uploads
+/downloads
 .vscode
-.idea
-
